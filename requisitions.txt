@@ -1,0 +1,17 @@
+python=3.7.9
+django=3.1.3
+
+
+-- Administrative Console --
+user: admin
+psswd: admin
+
+For remove this user, open terminal.
+Browse to your project source directory (where 'manage.py exists):
+
+Now execute these commands:
+$ python manage.py shell
+
+Then the interactive python shell with django powers will appear. Then type in:
+$ from django.contrib.auth.models import User
+$ User.objects.get(username="admin", is_superuser=True).delete()
