@@ -1,5 +1,10 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
-def hello_world(request):
-    return HttpResponse("Hello worlds")
+def hello_blog(request):
+    lista = [
+    'Home', 'Podcast', 'Personagens', 'Cenários', 'RPG',
+    ]
+    data = {'Nome': 'Blog Django 3', 'lista_tecnologias': lista}
+
+    return render(request, 'index.html', data)
