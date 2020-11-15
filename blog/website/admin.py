@@ -7,7 +7,8 @@ class PostAdmin(admin.ModelAdmin):
         'title',
         'sub_title',
         'content',
-        'categories'
+        'categories',
+        'deleted'
     ]
     
     search_fields = [
@@ -15,5 +16,8 @@ class PostAdmin(admin.ModelAdmin):
         'sub_title',
         'content'
     ]
+
+    def get_queryset(self, request):
+        return Post.objects.filter(deleted=True)
     
 admin.site.register(Post, PostAdmin)
