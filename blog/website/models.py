@@ -1,10 +1,20 @@
 from django.db import models
 
-# Create your models here.
+class Categorias(models.TextChoices):
+    RPG = 'RP', 'Role Playing Game'
+    CR = 'CR', 'Curiosidades'
+    GR = 'GR', 'Geral'
+    
+
 class Post(models.Model):
     title = models.CharField(max_length=30)
     sub_title = models.CharField(max_length=30)
     content = models.TextField()
+    categories = models.CharField(
+        max_length=2,
+        choices=Categorias.choices,
+        default=Categorias.GR,
+    )
 
     def __str__(self):
         return self.title

@@ -6,7 +6,8 @@ class PostAdmin(admin.ModelAdmin):
     list_display = [
         'title',
         'sub_title',
-        'content'
+        'content',
+        'categories'
     ]
     
     search_fields = [
