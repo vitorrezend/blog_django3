@@ -5,9 +5,16 @@
 
 <ul>
 {% for item in lista_tecnologias %}
-
-<li> {{ item }} </li>
-
+    <li> {{ item }} </li>
 {% endfor %}
+</ul>
 
+<ul>
+{% for post in posts %}
+
+    <h2> {{ post.title }} </h2>
+    <h3> {{ post.sub_title }} </h3>
+    <p> {{ post.content }}</p>
+    
+{% endfor %}
 </ul>
