@@ -10,7 +10,7 @@ def hello_blog(request):
         'RPG',
     ]
 
-    list_posts = Post.objects.all()
+    list_posts = Post.objects.filter(deleted=False)
 
     data = {
         'Nome': 'Blog Django 3',

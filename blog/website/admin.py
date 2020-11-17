@@ -17,7 +17,7 @@ class PostAdmin(admin.ModelAdmin):
         'content'
     ]
 
-    def get_queryset(self, request):
-        return Post.objects.filter(deleted=True)
+    #def get_queryset(self, request):
+       # return Post.objects.filter(deleted=True)
     
 admin.site.register(Post, PostAdmin)
